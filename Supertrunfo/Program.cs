@@ -2,8 +2,8 @@
 using Supertrunfo;
 
 Carta carta1 = new Carta("Neymar", "Atacante", 88, 85, 83, 50);
-Jogador j1 = new Jogador("Pedro");
-j1.Cartas.Add(carta1);
+Jogador jogador1 = new Jogador("Pedro");
+jogador1.Cartas.Add(carta1);
 
-Console.WriteLine(j1.Nome);
-Console.WriteLine(j1.Cartas[0].Nome);
+Console.WriteLine(jogador1.nome);
+Console.WriteLine(jogador1.Cartas[0].Nome);
