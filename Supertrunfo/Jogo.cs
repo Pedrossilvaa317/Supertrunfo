@@ -92,14 +92,14 @@ namespace Supertrunfo
             if (valor1 > valor2)
             {
                 Console.WriteLine(Jogador1.Nome + " venceu a rodada!");
-                Jogador1.Cartas.Add(carta1);
-                Jogador1.Cartas.Add(carta2);
+                Jogador1.Pontuacao++;
+                JogadorAtual = Jogador1;
             }
             else if (valor2 > valor1)
             {
                 Console.WriteLine(Jogador2.Nome + " venceu a rodada!");
-                Jogador2.Cartas.Add(carta1);
-                Jogador2.Cartas.Add(carta2);
+                Jogador2.Pontuacao++;
+                JogadorAtual = Jogador2;
             }
             else
             {
@@ -107,5 +107,28 @@ namespace Supertrunfo
             }
         }
 
-    }
+        public void ExibirPlacar()
+        {
+            Console.WriteLine("\n -- Placar --");
+            Console.WriteLine(Jogador1.Nome + ": " + Jogador1.Pontuacao + " ponto(s)");
+            Console.WriteLine(Jogador2.Nome + ": " + Jogador2.Pontuacao + " ponto(s)");
+        }
+
+        public void ExibirVencedor()
+        {
+            Console.WriteLine("\n -- Resultado Final --");
+
+            if (Jogador1.Pontuacao > Jogador2.Pontuacao)
+            {
+                Console.WriteLine("Vencedor final: " + Jogador1.Nome);
+            }
+            else if (Jogador2.Pontuacao > Jogador1.Pontuacao)
+            {
+                Console.WriteLine("Vencedor final: " + Jogador2.Nome);
+            }
+            else
+            {
+                Console.WriteLine("A partida empatou!");
+            }
+        }
 }
