@@ -26,5 +26,15 @@ namespace Supertrunfo
             Passe = passe;
             Defesa = defesa;
         }
+
+        public void ExibirCarta()
+        {
+            Console.WriteLine("Nome: " + Nome);
+            Console.WriteLine("Posição: " + Posicao);
+            Console.WriteLine("Velocidade: " + Velocidade);
+            Console.WriteLine("Finalização: " + Finalizacao);
+            Console.WriteLine("Passe: " + Passe);
+            Console.WriteLine("Defesa: " + Defesa);
+        }
     }
 }
