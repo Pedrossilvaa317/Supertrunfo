@@ -22,16 +22,28 @@ namespace Supertrunfo
 
         public void DistribuirCartas(List<Carta> baralho)
         {
+            Random random = new Random();
+
+            // Embaralhar o baralho
+            for (int i = 0; i < baralho.Count; i++)
+            {
+                int indiceAleatorio = random.Next(i, baralho.Count);
+
+                Carta temp = baralho[i];
+                baralho[i] = baralho[indiceAleatorio];
+                baralho[indiceAleatorio] = temp;
+            }
+
+            // Limpar cartas antigas, se houver
+            Jogador1.Cartas.Clear();
+            Jogador2.Cartas.Clear();
+
             for (int i = 0; i < baralho.Count; i++)
             {
                 if (i % 2 == 0)
-                {
                     Jogador1.Cartas.Add(baralho[i]);
-                }
                 else
-                {
                     Jogador2.Cartas.Add(baralho[i]);
-                }
             }
         }
 
@@ -46,7 +58,7 @@ namespace Supertrunfo
             Console.WriteLine("Digite sua escolha: ");
 
             //Recebe a escolha do usuario e converte através do parse para inteiro
-            int opcao = int.Parse(Console.ReadLine());
+            int opcao = int.Parse(Console.ReadLine()!);
             if (opcao < 1 || opcao > 4)
             {
                 Console.WriteLine("Opção inválida. Tente novamente.");
