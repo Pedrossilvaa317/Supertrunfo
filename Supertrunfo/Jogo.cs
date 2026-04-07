@@ -16,7 +16,7 @@ namespace Supertrunfo
         {
             Jogador1 = jogador1;
             Jogador2 = jogador2;
-            JogadorAtual = jogador1; 
+            JogadorAtual = jogador1;
         }
 
 
@@ -36,7 +36,7 @@ namespace Supertrunfo
         }
 
         public int EscolherAtributo()
-        { 
+        {
             // Menu de escolhas do jogador para fazer a jogada
             Console.WriteLine("\nEscolha um atributo:");
             Console.WriteLine("1 - Velocidade");
@@ -55,7 +55,7 @@ namespace Supertrunfo
 
         }
 
-        public void CompararCartas (Carta carta1, Carta carta2, int atributo)
+        public void CompararCartas(Carta carta1, Carta carta2, int atributo)
         {
             int valor1 = 0;
             int valor2 = 0;
@@ -131,4 +131,5 @@ namespace Supertrunfo
                 Console.WriteLine("A partida empatou!");
             }
         }
+    }
 }
